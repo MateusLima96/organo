@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Book, GeneroLiterario } from '../book/book';
 import { livros } from '../../mock-livros';
+import { LiteraryGenreComponent } from "../literary-genre/literary-genre.component";
 
 @Component({
   selector: 'app-book-list',
-  imports: [],
+  imports: [LiteraryGenreComponent],
   templateUrl: './book-list.component.html',
   styleUrl: './book-list.component.css'
 })
