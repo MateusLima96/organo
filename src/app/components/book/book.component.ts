@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Book } from './book';
 
 @Component({
   selector: 'app-book',
@@ -7,14 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './book.component.css'
 })
 export class BookComponent {
+    livro = input.required<Book>();
+
     alternarFavorito() {
-      this.livro.favorito = !this.livro.favorito
+      this.livro().favorito = !this.livro().favorito
     }
 
-    livro = {
-      titulo: 'O Senhor dos Anéis',
-      autoria: 'J.R.R. Tolkien',
-      favorito: false,
-      imagem: 'https://images-na.ssl-images-amazon.com/images/I/51EstVXM1UL._SX331_BO1,204,203,200_.jpg'
-    }
+
 }
